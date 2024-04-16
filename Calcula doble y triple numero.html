@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title><Canvas>Calcula doble y triple</Canvas></title>
+</head>
+<body>
+ <h1>Calculamos el doble y el triple de tu número</h1>  
+ 
+ <!-- Pide un número al usuario usando el prompt -->
+ <input type="text" id="numero1" placeholder="Escriba un número"/>
+ <br>
+ <input type="button" onclick="calculadora()" value="Click"/>
+ <div id="respuesta" style="display: none">
+    <p>El doble es: <span id="doble"></span></p>
+    <p>El triple es: <span id="triple"></span></p>
+ </div>
+
+ <!-- Muestra en pantalla el doble y el triple -->
+<script>
+ function calculadora(){ 
+    let numero1 = document.getElementById("numero1").value;
+    
+    let doble = numero1 * 2;
+    let triple = numero1 * 3;
+    
+
+    document.getElementById("respuesta").style.display = "block";
+    document.getElementById("doble").innerHTML = doble;
+    document.getElementById("triple").innerHTML = triple;
+
+}
+</script>
+</body>
+</html>

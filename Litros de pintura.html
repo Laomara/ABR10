@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    // Declarar constantes
+    Constante COBERTURA_LITROS = 12 // 12 m² cubiertos por litro de pintura
+
+
+
+    // Declarar variables
+    Real altura, ancho, area, litros_necesarios
+    Entero manos
+
+
+    // Solicitar al usuario las dimensiones de la pared y el número de manos
+    Mostrar "Ingresa la altura de la pared (en metros): "
+    Leer altura
+    Mostrar "Ingresa el ancho de la pared (en metros): "
+    Leer ancho
+    Mostrar "Ingresa el número de manos a aplicar: "
+    Leer manos
+
+
+    // Calcular el área de la pared
+    area = altura * ancho
+
+
+    // Calcular los litros de pintura necesarios
+    litros_necesarios = (area * manos) / COBERTURA_LITROS
+
+
+    // Mostrar los litros de pintura necesarios
+    Mostrar "Los litros de pintura necesarios para pintar la pared son: " + litros_necesarios
+    <h1>Calculadora de pintura</h1>
+    <form id="pinturaForm">
+        <label for="altura">Altura de la pared (metros):</label>
+        <input type="number" id="altura" required step="any"><br>
+    
+        <label for="ancho">Ancho de la pared (metros):</label>
+        <input type="number" id="ancho" required step="any"><br>
+    
+        <label for="manos">Número de manos a aplicar:</label>
+        <input type="number" id="manos" required><br>
+    
+        <button type="button" onclick="calcularPintura()">Calcular</button>
+    </form>
+    
+    <div id="resultado"></div>
+    <script>
+        function calcularPintura() {
+            const COBERTURA_LITROS = 12;
+            const altura = parseFloat(document.getElementById("altura").value);
+            const ancho = parseFloat(document.getElementById("ancho").value);
+            const manos = parseInt(document.getElementById("manos").value);
+
+            const area = altura * ancho;
+            const litros_necesarios = (area * manos) / COBERTURA_LITROS;
+
+            document.getElementById("resultado").innerHTML = "Los litros de pintura necesarios para pintar la pared son: " + litros_necesarios.toFixed(2);
+        }
+    </script>
+
+</body>
+
+</html>
