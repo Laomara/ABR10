@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Mayoría de Edad</title>
+</head>
+<body>
+    <h1>Verificar Mayoría de Edad</h1>
+    <button onclick="load()" id="datos">Eres mayor de edad?</button>
+   <!--<div ></div>-->
+
+    <script>
+
+        function load() {
+        // Pedir al usuario su nombre, apellido y edad
+        let nombre = prompt("Ingrese su nombre:");
+        let apellido = prompt("Ingrese su apellido:");
+        let edad = prompt("Ingrese su edad:");
+
+        // Mostrar los datos por consola
+        console.log("Nombre: " + nombre);
+        console.log("Apellido: " + apellido);
+        console.log("Edad: " + edad);
+
+        // Verificar si el usuario es mayor o menor de edad y mostrar el mensaje correspondiente
+        if (parseInt(edad) >= 18) {
+            alert(nombre + " " + apellido + ", eres MAYOR de edad");
+        } else {
+            alert(nombre + " " + apellido + ", eres MENOR de edad");
+        }
+   
+        // Mostrar los datos en un elemento HTML usando getElementById
+        let datosHTML = "Nombre: " + nombre + "<br>Apellido: " + apellido + "<br>Edad: " + edad;
+        document.getElementById("datos").innerHTML = datosHTML;
+    }
+    </script>
+</body>
+</html>
